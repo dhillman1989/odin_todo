@@ -11,9 +11,9 @@ button {
 }
 
 .container {
-  width: 500px;
+  width: 750px;
   max-width: 90vw;
-  height: 750px;
+  height: 900px;
   max-height: 100vh;
   background-color: white;
   border-radius: 25px;
@@ -44,7 +44,7 @@ p {
 }
 
 .todoList__todo {
-  padding: 0rem 2rem;
+  padding: 1rem 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

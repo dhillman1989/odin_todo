@@ -3,10 +3,10 @@ export const getProjects = () => {
   return data;
 };
 
-export const getProjectNames = () => {
+export const getProjectTitles = () => {
   let projectTitles = [];
   const data = JSON.parse(localStorage.getItem("projects"));
-  data.forEach((p) => arr.push(p.projectTitle));
+  data.forEach((p) => projectTitles.push(p.projectTitle));
 
   return projectTitles;
 };
