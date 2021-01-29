@@ -1,0 +1,44 @@
+.todoList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+
+  &__todo {
+    padding: 0rem 2rem;
+    display: flex;
+    align-items: center;
+
+    &:not(last-child) {
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    &:nth-of-type(even) {
+      background-color: rgb(233, 233, 233);
+    }
+  }
+
+  &__controls {
+    margin-left: auto;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    & i {
+      margin: 10px;
+      font-size: 20px;
+    }
+    & .fa-minus-circle {
+      color: red;
+    }
+  }
+  &__text {
+    margin-left: 2rem;
+  }
+
+  &__input--new {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}

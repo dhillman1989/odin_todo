@@ -1,0 +1,24 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, white, aqua);
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin: 0px auto 0.5rem;
+}
+.container {
+  width: 500px;
+  max-width: 90vw;
+  height: 750px;
+  max-height: 100vh;
+  background-color: white;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  box-shadow: 10px 10px 20px 2px rgb(30, 124, 124);
+}
