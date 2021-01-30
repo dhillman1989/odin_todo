@@ -3,8 +3,9 @@ import {
   getProjects,
   setProjects,
   addProject,
-  addTodo,
   getOneProject,
+  addTodo,
+  deleteTodo,
 } from "../controllers/projectController";
 
 export const createTodoList = (currProject) => {
@@ -19,22 +20,21 @@ export const createTodoList = (currProject) => {
   container.appendChild(form);
   form.onsubmit = (e) => {
     e.preventDefault();
-    addTodo(currProject.projectTitle, document.querySelector("#addnew").value);
-    console.log(currProject);
-    onLoad();
+    addTodo(currProject.id, document.querySelector("#addnew").value);
+    populateTodoList(currProject);
   };
   container.appendChild(list);
 };
 
-export const populateTodoList = (projectTitle) => {
-  const currProject = getOneProject(projectTitle);
+export const populateTodoList = (currProject) => {
+  const project = getOneProject(currProject);
 
   const list = document.querySelector(".todoList");
 
   list.innerHTML =
-    !currProject || !currProject.todos
+    !project || !project.todos
       ? `<h4>Nothing to see here yet!</h4>`
-      : currProject.todos
+      : project.todos
           .map(
             (todo) => `
     <li class="todoList__todo">
@@ -44,12 +44,23 @@ export const populateTodoList = (projectTitle) => {
         <p>${todo.desc}</p>
       </div>
       <div class= "todoList__controls">
-        <i class="fas fa-pencil-alt"></i>
-        <i class="fas fa-minus-circle"></i>
+        <i class="fas fa-pencil-alt" data-todoid=${todo.id}></i>
+        <i class="fas fa-minus-circle" data-todoid=${todo.id}></i>
       </div>
       
     </li>
     `
           )
           .join("");
+
+  const deleteButtons = document.querySelectorAll(".fa-minus-circle");
+  deleteButtons.forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      console.log(33);
+      console.log(345);
+      confirm("ARE YOU SURE? THIS CANT BE UNDONE") &&
+        deleteTodo(project.id.toString(), e.target.dataset.todoid.toString());
+      populateTodoList(currProject);
+    })
+  );
 };
