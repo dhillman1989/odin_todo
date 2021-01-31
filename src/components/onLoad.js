@@ -1,9 +1,6 @@
 import createHeader from "./header";
 import { createTodoList, populateTodoList } from "./todoList";
-import {
-  getProjects,
-  changeProjectIndex,
-} from "../controllers/projectController";
+import { getProjects } from "../controllers/projectController";
 
 const onLoad = (projectIndex) => {
   //clear container for initialisation

@@ -93,4 +93,13 @@ p {
   margin-left: 3rem;
   margin-right: 3rem;
 }
+
+.popupform {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
 /*# sourceMappingURL=main.css.map */
