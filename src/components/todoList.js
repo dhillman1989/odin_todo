@@ -56,8 +56,6 @@ export const populateTodoList = (currProject) => {
   const deleteButtons = document.querySelectorAll(".fa-minus-circle");
   deleteButtons.forEach((btn) =>
     btn.addEventListener("click", (e) => {
-      console.log(33);
-      console.log(345);
       confirm("ARE YOU SURE? THIS CANT BE UNDONE") &&
         deleteTodo(project.id.toString(), e.target.dataset.todoid.toString());
       populateTodoList(currProject);

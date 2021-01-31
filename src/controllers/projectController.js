@@ -57,6 +57,5 @@ export const deleteTodo = (projectId, todoId) => {
 
   data.splice(pIndex, 1, { ...data[pIndex], todos: [...newTodos] });
 
-  console.log(data);
   localStorage.setItem("projects", JSON.stringify(data));
 };

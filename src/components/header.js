@@ -8,7 +8,6 @@ const createHeader = (index, projects, currProject) => {
     (p, idx) => `<option value=${idx}>${p.projectTitle}</option>`
   );
   projectDropdown.onchange = (e) => {
-    console.log(e.target.value);
     onLoad(e.target.value);
   };
   projectDropdown.selectedIndex = index;

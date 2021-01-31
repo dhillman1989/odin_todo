@@ -6,7 +6,6 @@ import {
 } from "../controllers/projectController";
 
 const onLoad = (projectIndex) => {
-  console.log("reloaded" + projectIndex);
   //clear container for initialisation
   document.querySelector(".container").innerHTML = "";
 
