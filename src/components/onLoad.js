@@ -1,6 +1,7 @@
 import createHeader from "./header";
 import { createTodoList, populateTodoList } from "./todoList";
 import { getProjects } from "../controllers/projectController";
+import newProjectForm from "./newProjectForm";
 
 const onLoad = () => {
   //clear container for initialisation

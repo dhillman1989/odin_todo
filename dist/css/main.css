@@ -1,6 +1,12 @@
 body {
   height: 100vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(aqua));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    from(white),
+    to(aqua)
+  );
   background-image: linear-gradient(to bottom right, white, aqua);
   font-family: "Roboto", sans-serif;
 }
@@ -21,10 +27,10 @@ button {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   -webkit-box-shadow: 10px 10px 20px 2px #1e7c7c;
-          box-shadow: 10px 10px 20px 2px #1e7c7c;
+  box-shadow: 10px 10px 20px 2px #1e7c7c;
 }
 
 h1 {
@@ -49,8 +55,8 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .todoList__todo:not(last-child) {
@@ -69,8 +75,8 @@ p {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .todoList__controls i {
@@ -92,5 +98,18 @@ p {
   width: 100%;
   margin-left: 3rem;
   margin-right: 3rem;
+}
+
+.popupform {
+  z-index: 100;
+  background-color: white;
+  border: 1px solid black;
+  width: 50%;
+  padding: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 /*# sourceMappingURL=main.css.map */
