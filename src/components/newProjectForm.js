@@ -13,7 +13,7 @@ const newProjectForm = () => {
   <h2>NEW PROJECT</h2>
   <input id="addNewProject-title" placeholder="Project Title" required>
   <input id="addNewProject-tagline" placeholder="Tag Line" required>
-  <button id="addNewProject-submit">ADD PROJECT</button>
+  <button id="addNewProject-submit" class="button--secondary">ADD PROJECT</button>
   `;
 
   document.querySelector("body").appendChild(form);

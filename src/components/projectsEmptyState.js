@@ -8,7 +8,7 @@ export const projectsEmptyState = () => {
   emptyState.innerHTML = `
   <img class="emptyState__image" src="./images/nodata.svg"><h2>Nothing here yet!</h2>
     <p>Try adding a new project...<p>
-    <button class="newProjectButton"> + NEW PROJECT</button>`;
+    <button class="newProjectButton button--primary"> + NEW PROJECT</button>`;
 
   container.appendChild(emptyState);
 

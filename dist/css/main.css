@@ -13,14 +13,14 @@ body {
 button {
   padding: 1rem 2rem;
   margin: 0px auto 0.5rem;
-  background-color: #00b8b8;
   -webkit-box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
           box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: #000;
   font-weight: 600;
   font-size: 2rem;
   border: 0;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .container {
@@ -29,7 +29,7 @@ button {
   height: 900px;
   margin-top: 2rem;
   max-height: 90vh;
-  padding: 1rem;
+  padding: 2rem 0;
   background-color: white;
   border-radius: 25px;
   position: absolute;
@@ -42,6 +42,11 @@ button {
           box-shadow: 10px 10px 20px 2px #1e7c7c;
 }
 
+select {
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+}
+
 h1 {
   font-size: 40px;
   margin-bottom: 0;
@@ -49,6 +54,20 @@ h1 {
 
 p {
   margin-top: 0;
+}
+
+.button--primary {
+  background-color: #5f6cb4;
+  -webkit-box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.button--secondary {
+  background-color: #037180;
+  -webkit-box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
 .todoList {
@@ -59,6 +78,7 @@ p {
 }
 
 .todoList__todo {
+  margin-top: 2rem;
   padding: 1rem 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -127,20 +147,36 @@ p {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   border-radius: 10px;
+  background-color: #88dbaf;
+  -webkit-box-shadow: 0.8rem 0.8rem 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0.8rem 0.8rem 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+  -webkit-animation: 0.5s fadeIn ease-in-out;
+          animation: 0.5s fadeIn ease-in-out;
 }
 
 .popupform input {
   margin: 10px auto;
   padding: 0.5rem 0.5rem;
   font-size: 20px;
+  width: 500px;
 }
 
-.newtodo-form {
-  background-color: #32d390;
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 
-.newproject-form {
-  background-color: #2caf78;
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 
 .emptyState {

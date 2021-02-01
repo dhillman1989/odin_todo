@@ -15,7 +15,7 @@ const newTodoForm = (pIndex, currProject) => {
         <input id="addNewTodo-desc" placeholder="Extra details">
         <input id="addNewTodo-duedate" placeholder="due date">
         <input id="addNewTodo-priority" placeholder="priority">
-        <button id="addNewTodo-submit">ADD TODO</button>
+        <button id="addNewTodo-submit button--secondary">ADD TODO</button>
         `;
 
   document.querySelector("body").appendChild(form);

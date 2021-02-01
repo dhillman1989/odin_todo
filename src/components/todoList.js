@@ -15,6 +15,7 @@ export const createTodoList = (pIndex, currProject) => {
 
   //INPUT TO ADD NEW TODOS
   const addNewTodoButton = document.createElement("button");
+  addNewTodoButton.classList.add("button--primary");
   addNewTodoButton.innerHTML = `Add Todo`;
   addNewTodoButton.id = "addNewTodoButton";
 

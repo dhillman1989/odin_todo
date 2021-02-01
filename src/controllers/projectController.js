@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
+//CREATE A DEFAULT PROJECT TO DISPLAY IF THERE IS NOTHING IN LOCAL STORAGE
 export const createDefaultProject = () => {
   const newProject = {
     id: uuidv4(),
@@ -43,6 +44,13 @@ export const getProjects = () => {
     return newData;
   }
   return data;
+};
+
+export const editProject = (projectId, newTitle, newTagline) => {
+  const data = JSON.parse(localStorage.getItem("projects"));
+  const index = data.findIndex((p) => p.id == projectId);
+  data[index] = { ...data[index], projectTitle: newTitle, tagline: newTagline };
+  localStorage.setItem("projects", JSON.stringify(data));
 };
 
 export const deleteProject = (projectId) => {
