@@ -2,9 +2,15 @@ import onLoad from "./onLoad";
 import { addTodo } from "../controllers/projectController";
 
 const newTodoForm = (pIndex, currProject) => {
+  //remove any existing popupforms (if any)
+  document.querySelector(".popupform") &&
+    document.querySelector(".popupform").remove();
+
   const form = document.createElement("form");
   form.classList.add("popupform");
+  form.classList.add("newtodo-form");
   form.innerHTML = `
+  <h2>Add a new Todo</h2>
         <input id="addNewTodo-title" placeholder="Task">
         <input id="addNewTodo-desc" placeholder="Extra details">
         <input id="addNewTodo-duedate" placeholder="due date">

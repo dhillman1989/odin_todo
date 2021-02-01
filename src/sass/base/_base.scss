@@ -1,18 +1,32 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
+  font-size: 1.6rem;
   height: 100vh;
   background-image: linear-gradient(to bottom right, white, aqua);
   font-family: "Roboto", sans-serif;
 }
 
 button {
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   margin: 0px auto 0.5rem;
+  background-color: rgb(0, 184, 184);
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: 600;
+  font-size: 2rem;
+  border: 0;
+  border-radius: 1rem;
 }
 .container {
   width: 750px;
   max-width: 90vw;
   height: 900px;
-  max-height: 100vh;
+  margin-top: 2rem;
+  max-height: 90vh;
+  padding: 1rem;
   background-color: white;
   border-radius: 25px;
   position: absolute;

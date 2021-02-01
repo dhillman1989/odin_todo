@@ -1,4 +1,9 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
+  font-size: 1.6rem;
   height: 100vh;
   background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(aqua));
   background-image: linear-gradient(to bottom right, white, aqua);
@@ -6,15 +11,25 @@ body {
 }
 
 button {
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   margin: 0px auto 0.5rem;
+  background-color: #00b8b8;
+  -webkit-box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: 600;
+  font-size: 2rem;
+  border: 0;
+  border-radius: 1rem;
 }
 
 .container {
   width: 750px;
   max-width: 90vw;
   height: 900px;
-  max-height: 100vh;
+  margin-top: 2rem;
+  max-height: 90vh;
+  padding: 1rem;
   background-color: white;
   border-radius: 25px;
   position: absolute;
@@ -111,10 +126,32 @@ p {
           flex-direction: column;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+  border-radius: 10px;
 }
 
 .popupform input {
+  margin: 10px auto;
   padding: 0.5rem 0.5rem;
   font-size: 20px;
+}
+
+.newtodo-form {
+  background-color: #32d390;
+}
+
+.newproject-form {
+  background-color: #2caf78;
+}
+
+.emptyState {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.emptyState__image {
+  width: 75%;
 }
 /*# sourceMappingURL=main.css.map */

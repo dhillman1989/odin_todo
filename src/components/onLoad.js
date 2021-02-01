@@ -1,4 +1,5 @@
 import createHeader from "./header";
+import { projectsEmptyState } from "./projectsEmptyState";
 import { createTodoList, populateTodoList } from "./todoList";
 import { getProjects } from "../controllers/projectController";
 
@@ -9,14 +10,20 @@ const onLoad = (projectIndex) => {
   //get data for the projects
 
   let projects = getProjects();
-  let index = projectIndex || 0;
-  let currProject = projects[index];
 
-  ///render page elements
+  if (projects.length > 0) {
+    let index = projectIndex || 0;
+    let currProject = projects[index];
 
-  createHeader(index, projects, currProject);
-  createTodoList(index, currProject);
-  populateTodoList(currProject);
+    ///render page elements
+
+    createHeader(index, projects, currProject);
+    createTodoList(index, currProject);
+    populateTodoList(currProject);
+  } else {
+    ///IF NO PROJECTS IN STORAGE
+    projectsEmptyState();
+  }
 };
 
 export default onLoad;

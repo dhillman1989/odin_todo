@@ -1,5 +1,6 @@
 import onLoad from "./onLoad";
 import newProjectForm from "./newProjectForm";
+import { deleteProject } from "../controllers/projectController";
 
 const createHeader = (pIndex, projects, currProject) => {
   const { projectTitle, tagline } = currProject;
@@ -28,15 +29,28 @@ const createHeader = (pIndex, projects, currProject) => {
   const par = document.createElement("p");
   par.innerText = tagline;
 
+  ///edit & delete buttons
+  const controls = document.createElement("div");
+  controls.innerHTML =
+    "<button class='project-edit'>Edit</button> <button class='button-delete'>Delete Project</button>";
+
   //add to DOM
   container.appendChild(projectDropdown);
+  container.appendChild(controls);
   container.appendChild(h1);
   container.appendChild(par);
+
   container.appendChild(newProjectButton);
 
   //Add Event Listeners
   document.querySelector("#newProjectButton").addEventListener("click", () => {
     newProjectForm();
+  });
+
+  document.querySelector(".button-delete").addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteProject(currProject.id);
+    onLoad();
   });
 };
 

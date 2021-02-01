@@ -7,6 +7,7 @@ import {
   getOneProject,
   addTodo,
   deleteTodo,
+  toggleTodoStatus,
 } from "../controllers/projectController";
 
 export const createTodoList = (pIndex, currProject) => {
@@ -34,13 +35,15 @@ export const populateTodoList = (currProject) => {
   const list = document.querySelector(".todoList");
 
   list.innerHTML =
-    !project || !project.todos
+    !project || !project.todos.length
       ? `<h4>Nothing to see here yet!</h4>`
       : project.todos
           .map(
             (todo) => `
     <li class="todoList__todo">
-      <input type="checkbox"/>
+      <input class="item-checkbox" data-id=${todo.id} type="checkbox" ${
+              todo.completed && "checked"
+            }/>
       <div class="todoList__text">
         <h4>${todo.title}</h4>
         <p>${todo.desc}</p>
@@ -55,6 +58,7 @@ export const populateTodoList = (currProject) => {
           )
           .join("");
 
+  ///DELETE CONTROLS
   const deleteButtons = document.querySelectorAll(".fa-minus-circle");
   deleteButtons.forEach((btn) =>
     btn.addEventListener("click", (e) => {
@@ -63,4 +67,12 @@ export const populateTodoList = (currProject) => {
       populateTodoList(currProject);
     })
   );
+
+  ///TOGGLE CHECKBOX
+  const checkboxes = document.querySelectorAll(".item-checkbox");
+  checkboxes.forEach((cbox) => {
+    cbox.addEventListener("click", (e) => {
+      toggleTodoStatus(currProject.id, e.target.dataset.id);
+    });
+  });
 };
