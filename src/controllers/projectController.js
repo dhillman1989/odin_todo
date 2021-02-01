@@ -11,6 +11,7 @@ export const addProject = (projectTitle, tagline) => {
   const newProject = { id: uuidv4(), projectTitle, tagline, todos: [] };
   const newData = [...data, newProject];
   localStorage.setItem("projects", JSON.stringify(newData));
+  return JSON.parse(localStorage.getItem("projects")).length - 1;
 };
 
 export const getProjects = () => {
@@ -27,16 +28,16 @@ export const getOneProject = (currProject) => {
 };
 
 //ALTER TODOS
-export const addTodo = (projectId, todoTitle) => {
+export const addTodo = (projectId, todoTitle, desc, duedate, priority) => {
   const data = JSON.parse(localStorage.getItem("projects")) || [];
   const index = data.findIndex((p) => p.id == projectId);
   const todo = {
     id: uuidv4(),
     title: todoTitle,
-    desc: "",
+    desc,
     completed: false,
-    duedate: "tbc",
-    priority: "low",
+    duedate,
+    priority,
   };
 
   const newTodos = [...data[index].todos, todo];

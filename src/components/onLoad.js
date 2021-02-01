@@ -15,7 +15,7 @@ const onLoad = (projectIndex) => {
   ///render page elements
 
   createHeader(index, projects, currProject);
-  createTodoList(currProject);
+  createTodoList(index, currProject);
   populateTodoList(currProject);
 };
 

@@ -1,4 +1,5 @@
 import onLoad from "./onLoad";
+import newTodoForm from "./newTodoForm";
 import {
   getProjects,
   setProjects,
@@ -8,20 +9,21 @@ import {
   deleteTodo,
 } from "../controllers/projectController";
 
-export const createTodoList = (currProject) => {
+export const createTodoList = (pIndex, currProject) => {
   const container = document.querySelector(".container");
 
   //INPUT TO ADD NEW TODOS
-  const form = document.createElement("form");
-  form.innerHTML = `<input id="addnew" class="todoList__input" ><button class="todoList__button">Add</button>`;
+  const addNewTodoButton = document.createElement("button");
+  addNewTodoButton.innerHTML = `Add Todo`;
+  addNewTodoButton.id = "addNewTodoButton";
+
   const list = document.createElement("ul");
   list.classList.add("todoList");
 
-  container.appendChild(form);
-  form.onsubmit = (e) => {
+  container.appendChild(addNewTodoButton);
+  addNewTodoButton.onclick = (e) => {
     e.preventDefault();
-    addTodo(currProject.id, document.querySelector("#addnew").value);
-    populateTodoList(currProject);
+    newTodoForm(pIndex, currProject);
   };
   container.appendChild(list);
 };

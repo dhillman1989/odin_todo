@@ -1,7 +1,7 @@
 import onLoad from "./onLoad";
 import newProjectForm from "./newProjectForm";
 
-const createHeader = (index, projects, currProject) => {
+const createHeader = (pIndex, projects, currProject) => {
   const { projectTitle, tagline } = currProject;
   const container = document.querySelector(".container");
 
@@ -13,7 +13,7 @@ const createHeader = (index, projects, currProject) => {
   projectDropdown.onchange = (e) => {
     onLoad(e.target.value);
   };
-  projectDropdown.selectedIndex = index;
+  projectDropdown.selectedIndex = pIndex;
 
   //add new project button
   const newProjectButton = document.createElement("button");

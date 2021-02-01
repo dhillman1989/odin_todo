@@ -1,3 +1,4 @@
+import onLoad from "./onLoad";
 import { addProject } from "../controllers/projectController";
 
 const newProjectForm = () => {
@@ -12,10 +13,12 @@ const newProjectForm = () => {
     .querySelector("#addNewProject-submit")
     .addEventListener("click", (e) => {
       e.preventDefault();
-      addProject(
+      let newIndex = addProject(
         document.querySelector("#addNewProject-title").value,
         document.querySelector("#addNewProject-tagline").value
       );
+      document.querySelector(".popupform").remove();
+      onLoad(newIndex);
     });
 };
 
