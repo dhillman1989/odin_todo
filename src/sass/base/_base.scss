@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -7,6 +11,7 @@ body {
   height: 100vh;
   background-image: linear-gradient(to bottom right, white, aqua);
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
 button {

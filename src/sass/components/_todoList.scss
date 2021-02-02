@@ -55,3 +55,8 @@
     margin-right: 3rem;
   }
 }
+
+.item-checkbox:checked + .todoList__text {
+  text-decoration: line-through;
+  opacity: 0.3;
+}

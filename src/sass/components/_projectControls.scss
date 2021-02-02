@@ -1,0 +1,7 @@
+.projectControls {
+  display: flex;
+  justify-content: center;
+  & > * {
+    margin: 1rem 2rem;
+  }
+}

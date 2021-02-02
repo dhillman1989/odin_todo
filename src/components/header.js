@@ -18,10 +18,6 @@ const createHeader = (pIndex, projects, currProject) => {
   projectDropdown.selectedIndex = pIndex;
 
   //add new project button
-  const newProjectButton = document.createElement("button");
-  newProjectButton.id = "newProjectButton";
-  newProjectButton.classList.add("button--primary");
-  newProjectButton.innerText = "+ New Project";
 
   //create header
 
@@ -33,6 +29,7 @@ const createHeader = (pIndex, projects, currProject) => {
 
   ///edit & delete buttons
   const controls = document.createElement("div");
+  controls.classList.add("projectControls");
   controls.innerHTML = `<button id='newProjectButton' class='button--textonly'>Create New Project</button> 
     <button class='project-edit button--textonly'>Edit</button>
     <button class='button-delete button--textonly button--textdanger'>Delete Project</button>`;

@@ -1,4 +1,9 @@
-@-webkit-keyframes deleteTodo {}@keyframes deleteTodo {}html {
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
   font-size: 62.5%;
 }
 
@@ -8,6 +13,7 @@ body {
   background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(aqua));
   background-image: linear-gradient(to bottom right, white, aqua);
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
 button {
@@ -88,6 +94,7 @@ p {
   font-size: 1.5rem;
   font-weight: 200;
   color: green;
+  padding: 0;
 }
 
 .button--textonly:hover {
@@ -96,6 +103,19 @@ p {
 
 .button--textdanger {
   color: red;
+}
+
+.projectControls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projectControls > * {
+  margin: 1rem 2rem;
 }
 
 .todoList {
@@ -176,6 +196,11 @@ p {
   margin-right: 3rem;
 }
 
+.item-checkbox:checked + .todoList__text {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
 .popupform {
   z-index: 100;
   background-color: #fff;
@@ -183,6 +208,9 @@ p {
   position: absolute;
   padding: 3rem;
   top: 50%;
+  width: 500px;
+  max-width: 95%;
+  position: fixed;
   left: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -205,7 +233,7 @@ p {
   margin: 10px auto;
   padding: 0.5rem 0.5rem;
   font-size: 20px;
-  width: 500px;
+  width: 100%;
 }
 
 @-webkit-keyframes fadeIn {
