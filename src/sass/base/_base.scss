@@ -10,6 +10,7 @@ body {
 }
 
 button {
+  outline: none;
   padding: 1rem 2rem;
   margin: 0px auto 0.5rem;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
@@ -22,6 +23,8 @@ button {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   width: 750px;
   max-width: 90vw;
   height: 900px;
@@ -41,4 +44,7 @@ button {
 select {
   padding: 0.5rem 1rem;
   font-size: 2rem;
+  max-width: 50%;
+  min-width: 300px;
+  margin: 0 auto;
 }

@@ -11,8 +11,8 @@ const editProjectForm = (pIndex, currProject) => {
   form.classList.add("editproject-form");
   form.innerHTML = `
   <h2>EDIT ${currProject.projectTitle}</h2>
-  <input id="editProject-title" value=${currProject.projectTitle} required>
-  <input id="editProject-tagline" value=${currProject.tagline} required>
+  <input id="editProject-title" value="${currProject.projectTitle}" required>
+  <input id="editProject-tagline" value="${currProject.tagline}" required>
   <button id="editProject-submit" class="button--secondary">UPDATE PROJECT</button>
   `;
 

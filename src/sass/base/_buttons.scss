@@ -9,3 +9,18 @@
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
   color: #fff;
 }
+
+.button--textonly {
+  background-color: transparent;
+  box-shadow: none;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: green;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.button--textdanger {
+  color: red;
+}

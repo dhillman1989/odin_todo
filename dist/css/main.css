@@ -1,4 +1,4 @@
-html {
+@-webkit-keyframes deleteTodo {}@keyframes deleteTodo {}html {
   font-size: 62.5%;
 }
 
@@ -11,6 +11,7 @@ body {
 }
 
 button {
+  outline: none;
   padding: 1rem 2rem;
   margin: 0px auto 0.5rem;
   -webkit-box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
@@ -24,6 +25,13 @@ button {
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 750px;
   max-width: 90vw;
   height: 900px;
@@ -45,6 +53,9 @@ button {
 select {
   padding: 0.5rem 1rem;
   font-size: 2rem;
+  max-width: 50%;
+  min-width: 300px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -70,15 +81,34 @@ p {
   color: #fff;
 }
 
+.button--textonly {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: green;
+}
+
+.button--textonly:hover {
+  text-decoration: underline;
+}
+
+.button--textdanger {
+  color: red;
+}
+
 .todoList {
   list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: left;
+  margin-top: 5rem;
+  overflow-y: scroll;
 }
 
 .todoList__todo {
-  margin-top: 2rem;
+  margin-top: 0rem;
   padding: 1rem 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,8 +143,25 @@ p {
   font-size: 20px;
 }
 
+.todoList__controls .fa-pencil-alt {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.todoList__controls .fa-pencil-alt:hover {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
 .todoList__controls .fa-minus-circle {
   color: red;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.todoList__controls .fa-minus-circle:hover {
+  -webkit-transform: scale(2) rotate(180deg);
+          transform: scale(2) rotate(180deg);
 }
 
 .todoList__text {
@@ -180,14 +227,11 @@ p {
 }
 
 .emptyState {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  margin-top: 10rem;
+  text-align: center;
 }
 
 .emptyState__image {
-  width: 75%;
+  width: 50%;
 }
 /*# sourceMappingURL=main.css.map */

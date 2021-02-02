@@ -3,9 +3,10 @@
   margin: 0;
   padding: 0;
   text-align: left;
-
+  margin-top: 5rem;
+  overflow-y: scroll;
   &__todo {
-    margin-top: 2rem;
+    margin-top: 0rem;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
@@ -27,8 +28,19 @@
       margin: 10px;
       font-size: 20px;
     }
+    & .fa-pencil-alt {
+      transition: all 1s;
+      &:hover {
+        transform: scale(2);
+      }
+    }
+
     & .fa-minus-circle {
       color: red;
+      transition: all 1s;
+      &:hover {
+        transform: scale(2) rotate(180deg);
+      }
     }
   }
   &__text {

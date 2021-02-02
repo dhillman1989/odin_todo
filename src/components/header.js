@@ -33,16 +33,15 @@ const createHeader = (pIndex, projects, currProject) => {
 
   ///edit & delete buttons
   const controls = document.createElement("div");
-  controls.innerHTML =
-    "<button class='project-edit button--primary'>Edit</button> <button class='button-delete button--primary'>Delete Project</button>";
+  controls.innerHTML = `<button id='newProjectButton' class='button--textonly'>Create New Project</button> 
+    <button class='project-edit button--textonly'>Edit</button>
+    <button class='button-delete button--textonly button--textdanger'>Delete Project</button>`;
 
   //add to DOM
   container.appendChild(projectDropdown);
   container.appendChild(controls);
   container.appendChild(h1);
   container.appendChild(par);
-
-  container.appendChild(newProjectButton);
 
   //Add Event Listeners
   document.querySelector("#newProjectButton").addEventListener("click", () => {

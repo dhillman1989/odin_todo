@@ -37,7 +37,7 @@ export const populateTodoList = (currProject) => {
 
   list.innerHTML =
     !project || !project.todos.length
-      ? `<h4>Nothing to see here yet!</h4>`
+      ? `<div class="emptyState"><img src="./images/notodos.svg" class="emptyState__image"><h4>Nothing to see here yet!</h4></div>`
       : project.todos
           .map(
             (todo) => `
