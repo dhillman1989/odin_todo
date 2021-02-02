@@ -58,6 +58,8 @@ button {
 
 select {
   padding: 0.5rem 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.9);
+  outline: 0;
   font-size: 2rem;
   max-width: 50%;
   min-width: 300px;
@@ -125,6 +127,7 @@ p {
   text-align: left;
   margin-top: 5rem;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .todoList__todo {
@@ -136,6 +139,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-left: 2rem solid transparent;
 }
 
 .todoList__todo:not(last-child) {
@@ -146,8 +150,12 @@ p {
   background-color: #e9e9e9;
 }
 
-.todoList__controls {
+.todoList__duedate {
   margin-left: auto;
+}
+
+.todoList__controls {
+  margin-left: 2rem;
   font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,6 +207,18 @@ p {
 .item-checkbox:checked + .todoList__text {
   text-decoration: line-through;
   opacity: 0.3;
+}
+
+.priority-3 {
+  border-left: 2rem solid red;
+}
+
+.priority-2 {
+  border-left: 2rem solid #fff347;
+}
+
+.priority-1 {
+  border-left: 2rem solid #b5deff;
 }
 
 .popupform {

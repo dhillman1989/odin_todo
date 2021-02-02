@@ -13,8 +13,13 @@ const newTodoForm = (pIndex, currProject) => {
   <h2>Add a new Todo</h2>
         <input id="addNewTodo-title" placeholder="Task" required>
         <input id="addNewTodo-desc" placeholder="Extra details">
-        <input id="addNewTodo-duedate" placeholder="due date">
-        <input id="addNewTodo-priority" placeholder="priority">
+        <input type="date" id="addNewTodo-duedate" >
+        <select id="addNewTodo-priority">
+          <option value="3">High priority</option>
+          <option value="2">Medium priority</option>
+          <option value="1">Low Priority</option>
+          <option selected="selected" value="0">no priority</option>
+          </select>
         <button id="addNewTodo-submit" class="button--secondary">ADD TODO</button>
         `;
 

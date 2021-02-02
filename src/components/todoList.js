@@ -1,5 +1,6 @@
 import onLoad from "./onLoad";
 import newTodoForm from "./newTodoForm";
+import editTodoForm from "./editTodoForm";
 import {
   getProjects,
   setProjects,
@@ -30,7 +31,7 @@ export const createTodoList = (pIndex, currProject) => {
   container.appendChild(list);
 };
 
-export const populateTodoList = (currProject) => {
+export const populateTodoList = (pIndex, currProject) => {
   const project = getOneProject(currProject);
 
   const list = document.querySelector(".todoList");
@@ -41,7 +42,7 @@ export const populateTodoList = (currProject) => {
       : project.todos
           .map(
             (todo) => `
-    <li class="todoList__todo">
+    <li class="todoList__todo priority-${todo.priority}">
       <input class="item-checkbox" data-id=${todo.id} type="checkbox" ${
               todo.completed && "checked"
             }/>
@@ -49,15 +50,34 @@ export const populateTodoList = (currProject) => {
         <h4>${todo.title}</h4>
         <p>${todo.desc}</p>
       </div>
+      <div class="todoList__duedate">${todo.duedate}</div>
       <div class= "todoList__controls">
-        <i class="fas fa-pencil-alt" data-todoid=${todo.id}></i>
-        <i class="fas fa-minus-circle" data-todoid=${todo.id}></i>
+        <i class="fas fa-pencil-alt" data-todotitle="${todo.title}"
+        data-tododesc="${todo.desc}"
+        data-tododuedate="${todo.duedate}"
+        data-todopriority="${todo.priority}"
+        data-todoid ="${todo.id}"></i>
+        <i class="fas fa-minus-circle" data-todoid="${todo.id}"></i>
       </div>
       
     </li>
     `
           )
           .join("");
+
+  ///EDIT CONTROLS
+  const editButtons = document.querySelectorAll(".fa-pencil-alt");
+  editButtons.forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      editTodoForm(pIndex, currProject, {
+        title: e.target.dataset.todotitle,
+        desc: e.target.dataset.tododesc,
+        duedate: e.target.dataset.tododuedate,
+        priority: e.target.dataset.todopriority,
+        id: e.target.dataset.todoid,
+      });
+    })
+  );
 
   ///DELETE CONTROLS
   const deleteButtons = document.querySelectorAll(".fa-minus-circle");

@@ -5,12 +5,13 @@
   text-align: left;
   margin-top: 5rem;
   overflow-y: scroll;
+  overflow-x: hidden;
   &__todo {
     margin-top: 0rem;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
-
+    border-left: 2rem solid transparent;
     &:not(last-child) {
       border-top: 1px solid rgba(0, 0, 0, 0.2);
     }
@@ -19,8 +20,12 @@
     }
   }
 
-  &__controls {
+  &__duedate {
     margin-left: auto;
+  }
+
+  &__controls {
+    margin-left: 2rem;
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -59,4 +64,14 @@
 .item-checkbox:checked + .todoList__text {
   text-decoration: line-through;
   opacity: 0.3;
+}
+
+.priority-3 {
+  border-left: 2rem solid red;
+}
+.priority-2 {
+  border-left: 2rem solid rgb(255, 243, 71);
+}
+.priority-1 {
+  border-left: 2rem solid rgb(181, 222, 255);
 }

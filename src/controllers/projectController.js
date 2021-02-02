@@ -110,3 +110,19 @@ export const toggleTodoStatus = (projectId, todoId) => {
   };
   localStorage.setItem("projects", JSON.stringify(data));
 };
+
+export const editTodo = (projectId, todoId, title, desc, duedate, priority) => {
+  const data = JSON.parse(localStorage.getItem("projects"));
+  const pIndex = data.findIndex((p) => p.id == projectId);
+  const tIndex = data[pIndex].todos.findIndex((t) => t.id == todoId);
+
+  data[pIndex].todos[tIndex] = {
+    ...data[pIndex].todos[tIndex],
+    title,
+    desc,
+    duedate,
+    priority,
+  };
+
+  localStorage.setItem("projects", JSON.stringify(data));
+};

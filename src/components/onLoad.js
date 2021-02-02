@@ -19,7 +19,7 @@ const onLoad = (projectIndex) => {
 
     createHeader(index, projects, currProject);
     createTodoList(index, currProject);
-    populateTodoList(currProject);
+    populateTodoList(index, currProject);
   } else {
     ///IF NO PROJECTS IN STORAGE
     projectsEmptyState();
