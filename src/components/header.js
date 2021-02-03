@@ -47,6 +47,9 @@ const createHeader = (pIndex, projects, currProject) => {
 
   document.querySelector(".button-delete").addEventListener("click", (e) => {
     e.preventDefault();
+    confirm(
+      `Are you sure you want to delete "${currProject.projectTitle}"? This cannot be undone.`
+    );
     deleteProject(currProject.id);
     onLoad();
   });
