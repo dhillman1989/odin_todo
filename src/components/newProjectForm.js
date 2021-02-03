@@ -10,6 +10,7 @@ const newProjectForm = () => {
   form.classList.add("popupform");
   form.classList.add("newproject-form");
   form.innerHTML = `
+  <div class="close-popup">X</div>
   <h2>NEW PROJECT</h2>
   <input id="addNewProject-title" placeholder="Project Title" required>
   <input id="addNewProject-tagline" placeholder="Tag Line" required>
@@ -34,6 +35,12 @@ const newProjectForm = () => {
         onLoad(newIndex);
       }
     });
+
+  document
+    .querySelector(".close-popup")
+    .addEventListener("click", () =>
+      document.querySelector(".popupform").remove()
+    );
 };
 
 export default newProjectForm;

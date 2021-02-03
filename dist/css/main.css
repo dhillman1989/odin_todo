@@ -16,20 +16,6 @@ body {
   overflow: hidden;
 }
 
-button {
-  outline: none;
-  padding: 1rem 2rem;
-  margin: 0px auto 0.5rem;
-  -webkit-box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
-          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
-  color: #000;
-  font-weight: 600;
-  font-size: 2rem;
-  border: 0;
-  border-radius: 1rem;
-  cursor: pointer;
-}
-
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,10 +25,9 @@ button {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 750px;
-  max-width: 90vw;
-  height: 900px;
+  height: 90vh;
   margin-top: 2rem;
-  max-height: 90vh;
+  max-width: 90%;
   padding: 2rem 0;
   background-color: white;
   border-radius: 25px;
@@ -61,18 +46,46 @@ select {
   border: 2px solid rgba(0, 0, 0, 0.9);
   outline: 0;
   font-size: 2rem;
-  max-width: 50%;
-  min-width: 300px;
-  margin: 0 auto;
+  width: 250px;
+  max-width: 80vw;
+  margin: 1rem auto;
+}
+
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+  .container {
+    padding-top: 5rem;
+    border-radius: 0;
+    height: 100vh;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 3.5rem;
   margin-bottom: 0;
 }
 
 p {
   margin-top: 0;
+}
+
+button {
+  outline: none;
+  padding: 1rem 2rem;
+  margin: 0px auto 0.5rem;
+  -webkit-box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
+  color: #000;
+  font-weight: 600;
+  font-size: 1.8rem;
+  border: 0;
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
 .button--primary {
@@ -125,7 +138,7 @@ p {
   margin: 0;
   padding: 0;
   text-align: left;
-  margin-top: 5rem;
+  margin-top: 2rem;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -245,8 +258,8 @@ p {
   background-color: #88dbaf;
   -webkit-box-shadow: 0.8rem 0.8rem 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
           box-shadow: 0.8rem 0.8rem 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
-  -webkit-animation: 0.5s fadeIn ease-in-out;
-          animation: 0.5s fadeIn ease-in-out;
+  -webkit-animation: 0.7s fadeIn ease-in-out;
+          animation: 0.7s fadeIn ease-in-out;
 }
 
 .popupform input {
@@ -256,21 +269,36 @@ p {
   width: 100%;
 }
 
+.close-popup {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: #000;
+}
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0%;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0);
+            transform: translateX(-50%) translateY(-50%) scale(0);
   }
   100% {
     opacity: 100%;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+            transform: translateX(-50%) translateY(-50%) scale(1);
   }
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0%;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0);
+            transform: translateX(-50%) translateY(-50%) scale(0);
   }
   100% {
     opacity: 100%;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+            transform: translateX(-50%) translateY(-50%) scale(1);
   }
 }
 

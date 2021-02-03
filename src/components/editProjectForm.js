@@ -10,6 +10,7 @@ const editProjectForm = (pIndex, currProject) => {
   form.classList.add("popupform");
   form.classList.add("editproject-form");
   form.innerHTML = `
+  <div class="close-popup">X</div>
   <h2>EDIT ${currProject.projectTitle}</h2>
   <input id="editProject-title" value="${currProject.projectTitle}" required>
   <input id="editProject-tagline" value="${currProject.tagline}" required>
@@ -30,6 +31,12 @@ const editProjectForm = (pIndex, currProject) => {
       document.querySelector(".popupform").remove();
       onLoad(pIndex);
     });
+
+  document
+    .querySelector(".close-popup")
+    .addEventListener("click", () =>
+      document.querySelector(".popupform").remove()
+    );
 };
 
 export default editProjectForm;

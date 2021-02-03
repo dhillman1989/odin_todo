@@ -14,27 +14,13 @@ body {
   overflow: hidden;
 }
 
-button {
-  outline: none;
-  padding: 1rem 2rem;
-  margin: 0px auto 0.5rem;
-  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.5);
-  color: #000;
-  font-weight: 600;
-  font-size: 2rem;
-  border: 0;
-  border-radius: 1rem;
-  cursor: pointer;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   width: 750px;
-  max-width: 90vw;
-  height: 900px;
+  height: 90vh;
   margin-top: 2rem;
-  max-height: 90vh;
+  max-width: 90%;
   padding: 2rem 0;
   background-color: white;
   border-radius: 25px;
@@ -51,7 +37,22 @@ select {
   border: 2px solid rgba(0, 0, 0, 0.9);
   outline: 0;
   font-size: 2rem;
-  max-width: 50%;
-  min-width: 300px;
-  margin: 0 auto;
+  width: 250px;
+  max-width: 80vw;
+  margin: 1rem auto;
+}
+
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    padding-top: 5rem;
+    border-radius: 0;
+    height: 100vh;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
 }

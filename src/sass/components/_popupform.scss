@@ -15,7 +15,7 @@
   border-radius: 10px;
   background-color: rgb(136, 219, 175);
   box-shadow: 0.8rem 0.8rem 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
-  animation: 0.5s fadeIn ease-in-out;
+  animation: 0.7s fadeIn ease-in-out;
   & input {
     margin: 10px auto;
     padding: 0.5rem 0.5rem;
@@ -24,11 +24,20 @@
   }
 }
 
+.close-popup {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: #000;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0%;
+    transform: translateX(-50%) translateY(-50%) scale(0);
   }
   100% {
     opacity: 100%;
+    transform: translateX(-50%) translateY(-50%) scale(1);
   }
 }
