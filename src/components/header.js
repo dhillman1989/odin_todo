@@ -49,8 +49,7 @@ const createHeader = (pIndex, projects, currProject) => {
     e.preventDefault();
     confirm(
       `Are you sure you want to delete "${currProject.projectTitle}"? This cannot be undone.`
-    );
-    deleteProject(currProject.id);
+    ) && deleteProject(currProject.id);
     onLoad();
   });
 

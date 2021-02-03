@@ -84,8 +84,11 @@ export const populateTodoList = (pIndex, currProject) => {
   deleteButtons.forEach((btn) =>
     btn.addEventListener("click", (e) => {
       confirm("ARE YOU SURE? THIS CANT BE UNDONE") &&
-        deleteTodo(project.id.toString(), e.target.dataset.todoid.toString());
-      populateTodoList(currProject);
+        deleteTodo(
+          currProject.id.toString(),
+          e.target.dataset.todoid.toString()
+        );
+      populateTodoList(pIndex, currProject);
     })
   );
 
