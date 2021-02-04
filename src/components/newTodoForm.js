@@ -1,5 +1,6 @@
 import onLoad from "./onLoad";
 import { addTodo } from "../controllers/projectController";
+import moment from "moment";
 
 const newTodoForm = (pIndex, currProject) => {
   //remove any existing popupforms (if any)
@@ -12,9 +13,13 @@ const newTodoForm = (pIndex, currProject) => {
   form.innerHTML = `
   <div class="close-popup">X</div>
   <h2>Add a new Todo</h2>
+        <label for="addNewTodo-title">Task</label>
         <input id="addNewTodo-title" placeholder="Task" required>
+        <label for="addNewTodo-desc">Description</label>
         <input id="addNewTodo-desc" placeholder="Extra details">
+        <label for="addNewTodo-duedate">Due Date</label>
         <input type="date" id="addNewTodo-duedate" >
+        <label for="addNewTodo-priority">Priority</label>
         <select id="addNewTodo-priority">
           <option value="3">High priority</option>
           <option value="2">Medium priority</option>

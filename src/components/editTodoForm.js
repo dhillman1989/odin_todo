@@ -12,13 +12,17 @@ const editTodoForm = (pIndex, currProject, todo) => {
   form.innerHTML = `
   <div class="close-popup">X</div>
   <h2>Edit Todo</h2>
+  <label for="editTodo-title">Task</label>
         <input id="editTodo-title" placeholder="Task" value="${
           todo.title
         }" required>
+        <label for="editTodo-desc">Description</label>
         <input id="editTodo-desc" placeholder="Extra details" value="${
           todo.desc
         }">
+        <label for="editTodo-duedate">Due Date</label>
         <input type="date" value="${todo.duedate}" id="editTodo-duedate" >
+        <label for="editTodo-priority">Priority</label>
         <select id="editTodo-priority">
           <option ${
             todo.priority == 3 && "selected"

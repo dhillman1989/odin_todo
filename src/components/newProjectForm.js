@@ -12,7 +12,9 @@ const newProjectForm = () => {
   form.innerHTML = `
   <div class="close-popup">X</div>
   <h2>NEW PROJECT</h2>
+  <label for="addNewProject-title">Title</label>
   <input id="addNewProject-title" placeholder="Project Title" required>
+  <label for="addNewProject-tagline">Tagline (something to motivate you)</label>
   <input id="addNewProject-tagline" placeholder="Tag Line" required>
   <button id="addNewProject-submit" class="button--secondary">ADD PROJECT</button>
   `;

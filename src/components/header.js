@@ -10,7 +10,7 @@ const createHeader = (pIndex, projects, currProject) => {
   //dropdown
   const projectDropdown = document.createElement("select");
   projectDropdown.innerHTML = projects.map(
-    (p, idx) => `<option value=${idx}>${p.projectTitle}</option>`
+    (p, idx) => `<option value=${idx}>${p.projectTitle}  </option>`
   );
   projectDropdown.onchange = (e) => {
     onLoad(e.target.value);
@@ -30,7 +30,7 @@ const createHeader = (pIndex, projects, currProject) => {
   ///edit & delete buttons
   const controls = document.createElement("div");
   controls.classList.add("projectControls");
-  controls.innerHTML = `<button id='newProjectButton' class='button--textonly'>Create New Project</button> 
+  controls.innerHTML = `<button id='newProjectButton' class='button--textonly'> New Project</button> 
     <button class='project-edit button--textonly'>Edit</button>
     <button class='button-delete button--textonly button--textdanger'>Delete Project</button>`;
 

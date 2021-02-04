@@ -12,7 +12,9 @@ const editProjectForm = (pIndex, currProject) => {
   form.innerHTML = `
   <div class="close-popup">X</div>
   <h2>EDIT ${currProject.projectTitle}</h2>
+  <label for="editProject-title">Title</label>
   <input id="editProject-title" value="${currProject.projectTitle}" required>
+  <label for="editProject-tagline">Tagline (something to motivate you)</label>
   <input id="editProject-tagline" value="${currProject.tagline}" required>
   <button id="editProject-submit" class="button--secondary">UPDATE PROJECT</button>
   `;
