@@ -22,9 +22,11 @@ const createHeader = (pIndex, projects, currProject) => {
   //create header
 
   const h1 = document.createElement("h1");
+  h1.classList.add("heading");
   h1.innerText = projectTitle;
 
   const par = document.createElement("p");
+  par.classList.add("tagline");
   par.innerText = tagline;
 
   ///edit & delete buttons

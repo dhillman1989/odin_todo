@@ -53,9 +53,9 @@ export const populateTodoList = (pIndex, currProject) => {
         <h4>${todo.title}</h4>
         <p>${todo.desc}</p>
       </div>
-      <div class="todoList__duedate">${moment(todo.duedate).format(
-        "MMM Do YYYY"
-      )}</div>
+      <div class="todoList__duedate">${
+        todo.duedate ? moment(todo.duedate).format("MMM Do YYYY") : ""
+      }</div>
       <div class= "todoList__controls">
         <i class="fas fa-pencil-alt" data-todotitle="${todo.title}"
         data-tododesc="${todo.desc}"

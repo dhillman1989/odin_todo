@@ -12,7 +12,7 @@ const editTodoForm = (pIndex, currProject, todo) => {
   form.innerHTML = `
   <div class="close-popup">X</div>
   <h2>Edit Todo</h2>
-  <label for="editTodo-title">Task</label>
+    <label for="editTodo-title">Task</label>
         <input id="editTodo-title" placeholder="Task" value="${
           todo.title
         }" required>

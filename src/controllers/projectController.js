@@ -11,7 +11,7 @@ export const createDefaultProject = () => {
         id: uuidv4(),
         title: "delete me",
         desc: "or edit, your choice",
-        duedate: "n/a",
+        duedate: null,
         priority: "high",
         completed: true,
       },
